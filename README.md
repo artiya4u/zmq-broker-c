@@ -50,6 +50,9 @@ cmake --build ./cmake-build --target zmq_broker_c --
 
 ### Build Docker image.
 
-```
+```shell
+# Build
 docker build . -t zmq-broker-c:latest
+# Run
+docker run -d -it --net=host -e ZMQ_FRONT_ADDRESS=tcp://*:5555 -e ZMQ_BACK_ADDRESS=tcp://*:5556 zmq-broker-c:latest
 ```
