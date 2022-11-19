@@ -6,10 +6,16 @@ int main() {
     assert(frontend);
     void *backend = zmq_socket(context, ZMQ_XPUB);
     assert(backend);
-//  Bind both sockets to TCP ports
+
+    // Bind both sockets to TCP ports
     assert(zmq_bind(frontend, getenv("ZMQ_FRONT_ADDRESS")) == 0);
     assert(zmq_bind(backend, getenv("ZMQ_BACK_ADDRESS")) == 0);
-//  Start the queue proxy, which runs until ETERM
-    zmq_proxy(frontend, backend, NULL);
+    // Start the queue proxy, which runs until ETERM
+    zmq_proxy(frontend, backend, nullptr);
+
+    // We never get here...
+    zmq_close(frontend);
+    zmq_close(backend);
+    zmq_ctx_destroy(context);
     return 0;
 }
