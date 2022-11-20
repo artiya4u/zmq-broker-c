@@ -41,9 +41,9 @@ ZMQ_BACK_ADDRESS=tcp://*:5556
 ### Development
 
 ```
-cmake -S . -B ./cmake-build
-cmake --build ./cmake-build --target zmq_broker_c --
-./cmake-build/zmq_broker_c
+cmake -S . -B ./cmake-build-debug
+cmake --build ./cmake-build-debug --target zmq_broker_c --
+./cmake-build-debug/zmq_broker_c
 ```
 
 ### Build Docker image.
