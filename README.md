@@ -17,9 +17,7 @@ xcode-select --install
 brew install cmake
 
 # Install ZeroMQ lib
-brew install zeromq
-brew install czmq
-brew install libsodium
+brew install cppzmq
 ```
 
 - Linux (Debian like)
