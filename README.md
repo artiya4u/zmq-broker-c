@@ -17,6 +17,7 @@ xcode-select --install
 brew install cmake
 
 # Install ZeroMQ lib
+brew install czmq
 brew install cppzmq
 ```
 
